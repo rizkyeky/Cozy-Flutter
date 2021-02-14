@@ -17,7 +17,6 @@ class SpaceService implements Service {
   Future<ServiceResult<List<SpaceModel>>> getSpaces() async {
     try {
       final response = await _dio.get(_api.spaces.toString());
-      debugPrint(response.statusCode.toString());
 
       if (response.statusCode == 200) {
         final result = response.data as List;

@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:cozy_app/main.dart';
+// import 'package:cozy_app/main.dart';
 
 import 'package:cozy_app/service/service.dart';
 
@@ -32,6 +32,9 @@ Future<void> main() async {
 
   test('Get Kos Service', () async {
     final service = SpaceService();
-    await service.getSpaces();
+    final result = await service.getSpaces();
+    debugPrint(result.message);
+    debugPrint(result.status.toString());
+    debugPrint(result.data.first.name);
   });
 }

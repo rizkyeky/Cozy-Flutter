@@ -2,7 +2,10 @@ part of 'page.dart';
 
 class HomePage extends StatelessWidget {
 
-  final HomeController controller = injector.setController(HomeController());
+  final HomeController controller = injector.getController(
+    HomeController(),
+    tag: 'homeController'
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -249,7 +252,7 @@ class HomePage extends StatelessWidget {
         builder: (value, update) => Padding(
           padding: const EdgeInsets.all(12),
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(24),
+            borderRadius: BorderRadius.circular(60),
             child: BottomNavyBar(
               selectedIndex: value,
               onItemSelected: (index) => update(index),
@@ -262,25 +265,29 @@ class HomePage extends StatelessWidget {
                   title: const Text('Home'),
                   icon: const Icon(Icons.home_filled,),
                   activeColor: palettes['primary'],
-                  inactiveColor: palettes['text2']
+                  inactiveColor: palettes['text2'],
+                  textAlign: TextAlign.center
                 ),
                 BottomNavyBarItem(
                   title: const Text('Message'),
                   icon: const Icon(Icons.email_rounded,),
                   activeColor: palettes['primary'],
-                  inactiveColor: palettes['text2']
+                  inactiveColor: palettes['text2'],
+                  textAlign: TextAlign.center
                 ),
                 BottomNavyBarItem(
-                  title: const Text('Notification'),
+                  title: const Text('Notif'),
                   icon: const Icon(Icons.featured_play_list,),
                   activeColor: palettes['primary'],
-                  inactiveColor: palettes['text2']
+                  inactiveColor: palettes['text2'],
+                  textAlign: TextAlign.center
                 ),
                 BottomNavyBarItem(
                   title: const Text('Favorite'),
                   icon: const Icon(Icons.favorite,),
                   activeColor: palettes['primary'],
-                  inactiveColor: palettes['text2']
+                  inactiveColor: palettes['text2'],
+                  textAlign: TextAlign.center
                 ),
               ],
             ),
